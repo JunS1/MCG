@@ -6,18 +6,22 @@ library(ggplot2)
 wood_removal_table <- read.csv("./data/wood_removal_cubic_meters.csv", stringsAsFactors = FALSE)
 
 # page 1
-page_one <- tabPanel(
-  "First Page", # label for the tab in the navbar
-  titlePanel("Page 1"), # show with a displayed title
+background <- tabPanel(
+  "Backgorund", # label for the tab in the navbar
+  titlePanel("Background"), # show with a displayed title
   
   # This content uses a sidebar layout
   sidebarLayout(
     sidebarPanel(
-      textInput(inputId = "username", label = "What is your name?")
+      h3("Define Deforestation"),
+      p("insert definition")
+      
     ),
     mainPanel(
-      h3("Primary Content"),
-      p("Plots, data tables, etc. would go here")
+      h3("Problem Situation"),
+      p("Explanation of problem situation (stakeholders, setting, policy)"),
+      h3("Why Does it Matter"),
+      p("Explanation")
     )
   )
 )
@@ -70,12 +74,40 @@ wood_removal_visualization <- tabPanel(
   )
 )
 
+# page 4
+how_to_help <- tabPanel(
+  "How to Help", # label for the tab in the navbar
+  titlePanel("How to Help"), # show with a displayed title
+  
+  # This content uses a sidebar layout
+  sidebarLayout(
+    sidebarPanel(
+      h3("Why Should You Help?"),
+      p("Reducing it is cost effective, it is inexpensive, 
+        prepare for future, addresses other problems")
+    ),
+    mainPanel(
+      h3("Make an Impact"),
+      p("1. Plant a Tree where you can.
+      2. Go paperless at home and in the office.
+      3. Buy recycled products and then recycle them again.
+      4. Buy certified wood products. 
+      5. Read the labels and look for the FSC (Forest Stewardship Council) mark.
+      6. Support the products of companies that are committed to reducing deforestation. It’s all about business. If you don’t buy, they will be encouraged to improve their practices.
+      7. Raise awareness in your circle and in your community.
+      8. Buy only what you will use. 
+      9.Don’t use Palm Oil or products with Palm Oil.")
+    )
+  )
+)
+
 # ui component
 my_ui <- navbarPage(
   "My Application", # application title
-  page_one,         # include the first page content
+  background,         # include the first page content
   page_two,          # include the second page content
-  wood_removal_visualization
+  wood_removal_visualization,
+  how_to_help
 )
 
 # server component
