@@ -2,8 +2,11 @@ library(shiny)
 library(dplyr)
 library(tidyr)
 library(ggplot2)
+library(maps)
+library(mapproj)
 
 wood_removal_table <- read.csv("./data/wood_removal_cubic_meters.csv", stringsAsFactors = FALSE)
+forest_coverage_table <- read.csv("./data/forest_coverage_percent.csv", stringsAsFactors = FALSE)
 
 # page 1
 background <- tabPanel(
@@ -27,18 +30,31 @@ background <- tabPanel(
 )
 
 # page 2
-page_two <- tabPanel(
-  "Second Page", # label for the tab in the navbar
-  titlePanel("Page 2"), # show with a displayed title
+forest_coverage_visualization <- tabPanel(
+  "Forest Coverage Visualization", # label for the tab in the navbar
+  titlePanel("Forest Coverage Visualization"), # show with a displayed title
   
   # This content uses a sidebar layout
   sidebarLayout(
     sidebarPanel(
-      textInput(inputId = "username", label = "What is your name?")
+      tags$h4("Map Options"),
+      sliderInput(
+        inputId = "year",
+        label = "Select year",
+        min = 1990,
+        max = 2015,
+        value = 1990
+      )
     ),
     mainPanel(
-      h3("Primary Content"),
-      p("Plots, data tables, etc. would go here")
+      h3("World Map of Forest Coverage"),
+      p("Based on the year selected, display a choropleth map."),
+      plotOutput("forest_coverage"),
+      tabsetPanel (
+            tags$p("Percentage of forest coverage depending on the selected year.")
+      ),
+      tags$h2("Findings"),
+      tags$p("Enter findings here")
     )
   )
 )
@@ -105,7 +121,7 @@ how_to_help <- tabPanel(
 my_ui <- navbarPage(
   "My Application", # application title
   background,         # include the first page content
-  page_two,          # include the second page content
+  forest_coverage_visualization,          # include the second page content
   wood_removal_visualization,
   how_to_help
 )
@@ -119,6 +135,21 @@ my_server <- function(input, output) {
     ggplot(data = gather(filter_country, key = year, value = removal),
            mapping = aes(x = year, y = removal)) +
       geom_point()
+  })
+  # choropleth map of forest coverage
+  output$forest_coverage <- renderPlot({
+    # select_year <- forest_coverage_table %>%
+    #   select(country, input$year)
+    
+    world_shape <- map_data("world")
+    
+    ggplot(world_shape) +
+      geom_polygon(
+        mapping = aes(x = long, y = lat, group = group),
+        color = "white",
+        size = .1
+      ) +
+      coord_map()
   })
 }
 
