@@ -90,7 +90,18 @@ wood_removal_visualization <- tabPanel(
   )
 )
 
-# page 4
+# Page 4 - Conclusion
+conclusion <- tabPanel(
+  "Conclusions", # Label within the NavBar
+  titlePanel("Conclusions"), # Title within the tab
+  
+  mainPanel(
+    h3("Our Findings:"),
+    # p("This is where our findings for the conclusions will go")
+  )
+)
+
+# page 5
 how_to_help <- tabPanel(
   "How to Help", # label for the tab in the navbar
   titlePanel("How to Help"), # show with a displayed title
@@ -117,6 +128,34 @@ how_to_help <- tabPanel(
   )
 )
 
+# Page 6 - About the Project/About Us
+about_page <- tabPanel(
+  "About", # Label within the NavBar
+  titlePanel("About the Project/About Us"), # Title with the tab
+  # 'About Us' Sidebar for teammates
+  sidebarLayout(
+    sidebarPanel(
+      h3("About the Team:"),
+      p("Post pictures and brief description of each team member")
+    )
+  ),
+  # About the Project 
+  mainPanel(
+    p("Information about the project goes here.")
+  )
+)
+
+  # Page 4 - Conclusion
+  conclusion <- tabPanel(
+    "Conclusions", # Label within the NavBar
+    titlePanel("Conclusions"), # Title within the tab
+    
+    mainPanel(
+      h3("Our Findings:"),
+      # p("This is where our findings for the conclusions will go")
+    )
+  )
+  
 # ui component
 my_ui <- navbarPage(
   "My Application", # application title
