@@ -104,15 +104,15 @@ how_to_help <- tabPanel(
     ),
     mainPanel(
       h3("Make an Impact"),
-      p("1. Plant a Tree where you can.
-      2. Go paperless at home and in the office.
-      3. Buy recycled products and then recycle them again.
-      4. Buy certified wood products. 
-      5. Read the labels and look for the FSC (Forest Stewardship Council) mark.
-      6. Support the products of companies that are committed to reducing deforestation. It’s all about business. If you don’t buy, they will be encouraged to improve their practices.
-      7. Raise awareness in your circle and in your community.
-      8. Buy only what you will use. 
-      9.Don’t use Palm Oil or products with Palm Oil.")
+      p("1. Plant a Tree where you can."),
+      p("2. Go paperless at home and in the office."),
+      p("3. Buy recycled products and then recycle them again."),
+      p("4. Buy certified wood products."), 
+      p("5. Read the labels and look for the FSC (Forest Stewardship Council) mark."),
+      p("6. Support the products of companies that are committed to reducing deforestation. It’s all about business. If you don’t buy, they will be encouraged to improve their practices."),
+      p("7. Raise awareness in your circle and in your community."),
+      p("8. Buy only what you will use."), 
+      p("9.Don’t use Palm Oil or products with Palm Oil.")
     )
   )
 )
