@@ -137,12 +137,12 @@ about_page <- tabPanel(
     sidebarPanel(
       h3("About the Team:"),
       p("Post pictures and brief description of each team member")
+    ),
+    # About the Project 
+    mainPanel(
+      h3("About the Project"),
+      p("Information about the project goes here.")
     )
-  ),
-  # About the Project 
-  mainPanel(
-    h3("About the Project"),
-    p("Information about the project goes here.")
   )
 )
   
@@ -152,7 +152,9 @@ my_ui <- navbarPage(
   background,         # include the first page content
   forest_coverage_visualization,          # include the second page content
   wood_removal_visualization,
-  how_to_help
+  conclusion,
+  how_to_help,
+  about_page
 )
 
 # server component
