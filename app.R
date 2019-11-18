@@ -141,20 +141,10 @@ about_page <- tabPanel(
   ),
   # About the Project 
   mainPanel(
+    h3("About the Project"),
     p("Information about the project goes here.")
   )
 )
-
-  # Page 4 - Conclusion
-  conclusion <- tabPanel(
-    "Conclusions", # Label within the NavBar
-    titlePanel("Conclusions"), # Title within the tab
-    
-    mainPanel(
-      h3("Our Findings:"),
-      # p("This is where our findings for the conclusions will go")
-    )
-  )
   
 # ui component
 my_ui <- navbarPage(
