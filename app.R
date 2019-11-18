@@ -3,7 +3,6 @@ library(dplyr)
 library(tidyr)
 library(ggplot2)
 library(maps)
-library(mapproj)
 
 wood_removal_table <- read.csv("./data/wood_removal_cubic_meters.csv", stringsAsFactors = FALSE)
 forest_coverage_table <- read.csv("./data/forest_coverage_percent.csv", stringsAsFactors = FALSE)
@@ -138,18 +137,34 @@ my_server <- function(input, output) {
   })
   # choropleth map of forest coverage
   output$forest_coverage <- renderPlot({
-    # select_year <- forest_coverage_table %>%
-    #   select(country, input$year)
+    forest_coverage <- forest_coverage_table %>%
+      select(country, paste("X", input$year, sep = "")) %>%
+      rename(region = country)
     
-    world_shape <- map_data("world")
-    
+    world_shape <- map_data("world") %>%
+      left_join(forest_coverage, by = "region") %>%
+      rename(year = paste("X", input$year, sep = ""))
+
     ggplot(world_shape) +
       geom_polygon(
-        mapping = aes(x = long, y = lat, group = group),
+        mapping = aes(x = long, y = lat, group = group, fill = world_shape$year),
         color = "white",
         size = .1
       ) +
-      coord_map()
+      coord_map() +
+      scale_fill_continuous(low = "#E8E341", high = "#034511") +
+      labs(fill = "Forest Coverage Percent") +
+      theme_bw() +
+        theme(
+          axis.line = element_blank(),
+          axis.text = element_blank(),
+          axis.ticks = element_blank(),
+          axis.title = element_blank(),
+          plot.background = element_blank(),
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank(),
+          panel.border = element_blank()
+        )
   })
 }
 
