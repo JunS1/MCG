@@ -8,9 +8,9 @@ library(mapproj)
 wood_removal_table <- read.csv("./data/wood_removal_cubic_meters.csv", stringsAsFactors = FALSE)
 forest_coverage_table <- read.csv("./data/forest_coverage_percent.csv", stringsAsFactors = FALSE)
 
-# page 1
+# page 1 -- Problem Background
 background <- tabPanel(
-  "Backgorund", # label for the tab in the navbar
+  "Background", # label for the tab in the navbar
   titlePanel("Background"), # show with a displayed title
   
   # This content uses a sidebar layout
@@ -29,7 +29,7 @@ background <- tabPanel(
   )
 )
 
-# page 2
+# page 2 -- forest coverage visualization
 forest_coverage_visualization <- tabPanel(
   "Forest Coverage Visualization", # label for the tab in the navbar
   titlePanel("Forest Coverage Visualization"), # show with a displayed title
@@ -44,7 +44,13 @@ forest_coverage_visualization <- tabPanel(
         min = 1990,
         max = 2015,
         value = 1990
-      )
+      ),
+      tags$h4("Trends"),
+      tags$p("Discussion of trends in forest coverage over time and possible
+             causes of these trends."),
+      tags$h4("Current Measures"),
+      tags$p("Discussion of the effectiveness of current measures to decrease
+             rates of deforestation.")
     ),
     mainPanel(
       h3("World Map of Forest Coverage"),
@@ -54,12 +60,13 @@ forest_coverage_visualization <- tabPanel(
             tags$p("Percentage of forest coverage depending on the selected year.")
       ),
       tags$h2("Findings"),
-      tags$p("Enter findings here")
+      tags$p("Enter findings here, possibly points out trends to look for/pay special
+             attention to")
     )
   )
 )
 
-# page 3
+# page 3 -- wood removal visualization
 wood_removal_visualization <- tabPanel(
   "Wood Removal Visualization", # label for the tab in the navbar
   titlePanel("Wood Removal Visualization"), # show with a displayed title
@@ -101,7 +108,7 @@ conclusion <- tabPanel(
   )
 )
 
-# page 5
+# page 5 -- How to Help
 how_to_help <- tabPanel(
   "How to Help", # label for the tab in the navbar
   titlePanel("How to Help"), # show with a displayed title
@@ -159,6 +166,7 @@ my_ui <- navbarPage(
 
 # server component
 my_server <- function(input, output) {
+  # scatter plot of wood removal data
   output$wood_removal <- renderPlot({
     filter_country <- wood_removal_table %>%
       filter(country == input$region)
@@ -167,7 +175,7 @@ my_server <- function(input, output) {
            mapping = aes(x = year, y = removal)) +
       geom_point()
   })
-  # choropleth map of forest coverage
+  # choropleth map of forest coverage data
   output$forest_coverage <- renderPlot({
     forest_coverage <- forest_coverage_table %>%
       select(country, paste("X", input$year, sep = "")) %>%
@@ -200,6 +208,5 @@ my_server <- function(input, output) {
   })
 }
 
-# To start running your app, pass the variables defined in previous
-# code snippets into the `shinyApp()` function
+# To run app
 shinyApp(ui = my_ui, server = my_server)
