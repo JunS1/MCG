@@ -170,7 +170,7 @@ my_server <- function(input, output) {
   output$wood_removal <- renderPlot({
     filter_country <- wood_removal_table %>%
       filter(country == input$region)
-    filter_country$country <- NULL
+    filter_country$country <- NULL # get rid of the country value
     ggplot(data = gather(filter_country, key = year, value = removal),
            mapping = aes(x = year, y = removal)) +
       geom_point()
