@@ -23,6 +23,7 @@ background <- tabPanel(
     mainPanel(
       h3("Problem Situation"),
       p("Explanation of problem situation (stakeholders, setting, policy)"),
+      p("insert picture here"),
       h3("Why Does it Matter"),
       p("Explanation")
     )
