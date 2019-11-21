@@ -25,7 +25,8 @@ background <- tabPanel(
       p("Explanation of problem situation (stakeholders, setting, policy)"),
       p("insert picture here"),
       h3("Why Does it Matter"),
-      p("Explanation")
+      p("Explanation"),
+      tags$a(href="https://github.com/JunS1/MCG/wiki/Technical-Report", "Here is our technical report")
     )
   )
 )
@@ -128,10 +129,10 @@ how_to_help <- tabPanel(
       p("3. Buy recycled products and then recycle them again."),
       p("4. Buy certified wood products."), 
       p("5. Read the labels and look for the FSC (Forest Stewardship Council) mark."),
-      p("6. Support the products of companies that are committed to reducing deforestation. It’s all about business. If you don’t buy, they will be encouraged to improve their practices."),
+      p("6. Support the products of companies that are committed to reducing deforestation. It's all about business. If you don't buy, they will be encouraged to improve their practices."),
       p("7. Raise awareness in your circle and in your community."),
       p("8. Buy only what you will use."), 
-      p("9.Don’t use Palm Oil or products with Palm Oil.")
+      p("9.Don't use Palm Oil or products with Palm Oil.")
     )
   )
 )
@@ -156,7 +157,7 @@ about_page <- tabPanel(
   
 # ui component
 my_ui <- navbarPage(
-  "My Application", # application title
+  "Deforestation", # application title
   background,         # include the first page content
   forest_coverage_visualization,          # include the second page content
   wood_removal_visualization,
