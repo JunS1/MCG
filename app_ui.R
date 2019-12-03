@@ -1,4 +1,5 @@
 library(shiny)
+library(plotly)
 
 wood_removal_table <- read.csv("./data/wood_removal_cubic_meters.csv", stringsAsFactors = FALSE)
 forest_coverage_table <- read.csv("./data/forest_coverage_percent.csv", stringsAsFactors = FALSE)
@@ -76,20 +77,29 @@ wood_removal_visualization <- tabPanel(
         "region",
         label = "Select region",
         choices = c(as.list(wood_removal_table$country)),
-        selected = "All"
+        selected = "World Average"
       )
     ),
     mainPanel(
       tabsetPanel(
-        tabPanel("Based on the Region Selected Display a Scatter Plot",
+        tabPanel("Wood Removal from the years 1990 - 2011",
                  fluidRow(
-                   plotOutput("wood_removal")
+                   div(style='height:400px;',
+                    plotlyOutput("wood_removal")
+                   )
                  ),
                  tags$p("Shows the trend of wood removal for the country that the user selects")
         )
       ),
       tags$h2("Findings"),
-      tags$p("Enter findings here")
+      tags$p("Looking at the world average, we generally see a decline in the amount of wood removed
+             from the years 1990 - 2011. Yet, this is only the world average. If we look at individual 
+             countries, we see that most third world countries have a general increase in the amount of 
+             wood removed while the first world countries sees a decrease. We speculate that this is 
+             the case because the first world countries mainly gets their wood from trade. The general 
+             decline in the wood removal can be explained by the technological advances we have made, 
+             such as better machinery, that allows us to more efficiently
+             use the wood to produce the same amount of goods, if not more.")
     )
   )
 )

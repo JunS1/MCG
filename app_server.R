@@ -4,17 +4,22 @@ library(tidyr)
 library(ggplot2)
 library(maps)
 library(mapproj)
+library(plotly)
 
 # server component
 my_server <- function(input, output) {
   # scatter plot of wood removal data
-  output$wood_removal <- renderPlot({
+  output$wood_removal <- renderPlotly({
     filter_country <- wood_removal_table %>%
       filter(country == input$region)
     filter_country$country <- NULL # get rid of the country value
-    ggplot(data = gather(filter_country, key = year, value = removal),
-           mapping = aes(x = year, y = removal)) +
+    p <- ggplot(data = gather(filter_country, key = year, value = removal),
+                mapping = aes(x = year, y = removal)) +
       geom_point()
+    p + theme(axis.text.x= element_text(face = "bold", angle = 60)) + 
+      theme(axis.line = element_line(colour = "green", 
+                                     size = 1, linetype = "solid")) +
+      scale_x_discrete(name ="Year", breaks=) + scale_y_discrete(name = "Wood Removal(cubic meters)") 
   })
   # choropleth map of forest coverage data
   output$forest_coverage <- renderPlot({
