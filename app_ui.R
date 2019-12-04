@@ -1,5 +1,6 @@
 library(shiny)
 library(plotly)
+library(shinythemes)
 
 wood_removal_table <- read.csv("./data/wood_removal_cubic_meters.csv", stringsAsFactors = FALSE)
 forest_coverage_table <- read.csv("./data/forest_coverage_percent.csv", stringsAsFactors = FALSE)
@@ -237,6 +238,7 @@ about_page <- tabPanel(
 
 # ui component
 my_ui <- navbarPage(
+  theme = shinytheme("flatly"),
   "Deforestation", # application title
   background,         # include the first page content
   forest_coverage_visualization,          # include the second page content
