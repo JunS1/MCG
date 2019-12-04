@@ -110,8 +110,21 @@ conclusion <- tabPanel(
   titlePanel("Conclusions"), # Title within the tab
   
   mainPanel(
-    h3("Our Findings:"),
-    # p("This is where our findings for the conclusions will go")
+    h2("Our Findings:"),
+    h4("Wood Removal"),
+    p("We found that the U.S. had the most drastic change in the amount of wood removed. 
+      The amount of wood removed from the U.S. dropped from about 500 million cubic meters
+      to around 300 million cubic meters. Since this difference in wood removed was so large,
+      it had the greatest impact on the world average over that time interval (1990-2011). 
+      This change can be explained by the U.S.'s decision to begin importing goods (such as 
+      wood) from other countries; this is why we see an increase in wood removed for many
+      other countries."),
+    h4("Forest Coverage Area"),
+    p("The U.S. experienced an increase in forest coverage area over the past 2 decades
+      by about 1%. This ammounted to about 38,000 square miles of forest coverage. 
+      Vietnam underwent the greatest relative increase in forest coverage area by approximately
+      19%. In contrast, Honduras experienced the greatest relative decrease in forest coverage 
+      area by approximately 32%.")
   )
 )
 
