@@ -20,7 +20,7 @@ background <- tabPanel(
     ),
     mainPanel(
       h3("Problem Situation"),
-      img(src = "0_D71q806-VzrFAEzs.jpeg", height = "50%", width = "50%", align = "center"),
+      img(src = "background.jpeg", height = "50%", width = "50%", align = "center"),
       p("The problem our group is focusing on concerns deforestation throughout the world 
       and the rate at which it has occurred over the past several decades. As deforestation destroys the 
       lives of organisms and their surrounding ecosystems, it also makes the world more dangerous for humans. 
@@ -60,19 +60,12 @@ forest_coverage_visualization <- tabPanel(
   sidebarLayout(
     sidebarPanel(
       tags$h4("Map Options"),
-      sliderInput(
+      selectInput(
         inputId = "year",
         label = "Select year",
-        min = 1990,
-        max = 2015,
-        value = 1990
-      ),
-      tags$h4("Trends"),
-      tags$p("Discussion of trends in forest coverage over time and possible
-             causes of these trends."),
-      tags$h4("Current Measures"),
-      tags$p("Discussion of the effectiveness of current measures to decrease
-             rates of deforestation.")
+        choices = seq(from = 1990, to = 2015, by = 1),
+        selected = 1990
+      )
     ),
     mainPanel(
       h3("World Map of Forest Coverage"),
@@ -81,9 +74,16 @@ forest_coverage_visualization <- tabPanel(
       tabsetPanel (
         tags$p("Percentage of forest coverage depending on the selected year.")
       ),
-      tags$h2("Findings"),
-      tags$p("Enter findings here, possibly points out trends to look for/pay special
-             attention to")
+      tags$h2("Trends and Analysis"),
+      tags$p("From this map, the general decrease in forest coverage percentage
+             in the majority of countries is made clear. However, while most
+             countries have decreasing percentages, a few appear to be making
+             marginal progress in decreasing their rates of deforestation.
+             Another interesting thing to examine from this map are the trends in
+             developed vs less developed countries. For example, forest coverage in
+             Cambodia makes a marked decrease between 1990 and 2015, while coverage
+             in the USA increases. This could be due to implemented programs and
+             efforts to increase awareness and solve this issue.")
     )
   )
 )
@@ -173,7 +173,7 @@ how_to_help <- tabPanel(
     ),
     mainPanel(
       h3("Why Should You Help?"),
-      img(src = "helppic.jpg"),
+      img(src = "help.jpg"),
       p("Forest protection initiatives are crucial for everyone on the planet. 
       Global warming is a global issue and deforestation directly correlates with 
       changes in global warming as deforestation affects the absorption of carbon dioxide. 
@@ -204,17 +204,30 @@ about_page <- tabPanel(
   "About", # Label within the NavBar
   titlePanel("About the Project/About Us"), # Title with the tab
   # 'About Us' Sidebar for teammates
-  sidebarLayout(
-    sidebarPanel(
-      h3("About the Team:"),
-      p("Post pictures and brief description of each team member")
-    ),
     # About the Project 
     mainPanel(
-      h3("About the Project"),
-      p("Information about the project goes here.")
+      h3("About the Team:"),
+      img(src = "jun_song.JPG", height = "300px", width = "350px"),
+      h4("Jun Song:"),
+      p("Class: Sophomore"),
+      p("Major: Computer Science"),
+      p("Hobbies: Guitar, tennis, soccer"),
+      img(src = "zack_photo.JPG", height = "300px", width = "350px"),
+      h4("Zack Shanshory:"),
+      p("Class: Junior"),
+      p("Major: ESRM"),
+      p("Hobbies: Basketball, videogames, camping"),
+      img(src = "molly.JPG", height = "300px", width = "350px"),
+      h4("Molly Kappes"),
+      p("Class: Sophomore"),
+      p("Major: Informatics"),
+      p("Hobbies: Dancing, cooking, hiking"),
+      img(src = "drishti.JPG", height = "300px", width = "350px"),
+      h4("Drishti Vidyarthi"),
+      p("Class: Sophomore"),
+      p("Major: Informatics"),
+      p("Hobbies: photography, design, yoga")
     )
-  )
 )
 
 # ui component
