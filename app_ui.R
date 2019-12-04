@@ -209,18 +209,17 @@ how_to_help <- tabPanel(
 # Page 6 - About the Project/About Us
 about_page <- tabPanel(
   "About", # Label within the NavBar
-  titlePanel("About the Project/About Us"), # Title with the tab
+  titlePanel("About the Team:"), # Title with the tab
   # 'About Us' Sidebar for teammates
     # About the Project 
     mainPanel(
-      h3("About the Team:"),
       img(src = "jun_song.JPG", height = "300px", width = "350px"),
-      h4("Jun Song:"),
+      h4("Jun Song"),
       p("Class: Sophomore"),
       p("Major: Computer Science"),
       p("Hobbies: Guitar, tennis, soccer"),
       img(src = "zack_photo.JPG", height = "300px", width = "350px"),
-      h4("Zack Shanshory:"),
+      h4("Zack Shanshory"),
       p("Class: Junior"),
       p("Major: ESRM"),
       p("Hobbies: Basketball, videogames, camping"),
