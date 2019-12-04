@@ -14,9 +14,9 @@ background <- tabPanel(
   sidebarLayout(
     sidebarPanel(
       h3("Define Deforestation"),
-      p("The National Geographic defines deforestation as the “human-driven and natural loss of trees"),
+      p("The National Geographic defines deforestation as the human-driven and natural loss of trees"),
       p("This act ends up affect many other aspects of life from organisms to ecosystems to weather patterns. 
-        Data shows that forest areas make up around thirty percent of Earth’s land mass  but are disappearing 
+        Data shows that forest areas make up around thirty percent of Earth's land mass  but are disappearing 
         at an exponential rate."),
       img(src = "define.jpg", height = "100%", width = "100%", align = "center"),
       p("")
@@ -24,11 +24,11 @@ background <- tabPanel(
     mainPanel(
       img(src = "forest.jpeg", height = "100%", width = "100%", align = "center"),
       h3("Problem Situation"),
-      p(" "),
+      p(),
       p("The problem our group is focusing on concerns deforestation throughout the world 
       and the rate at which it has occurred over the past several decades. As deforestation destroys the 
       lives of organisms and their surrounding ecosystems, it also makes the world more dangerous for humans. 
-      With forests and rainforests being logged/removed at alarming rates, it’s important for humans to 
+      With forests and rainforests being logged/removed at alarming rates, it's important for humans to 
       understand the ecological and societal repercussions of their actions."),
       tags$b("Stakeholders"),
       p("Organisms that are native to the forests (plants and animals), indigenous people that live nearby, 
@@ -42,14 +42,14 @@ background <- tabPanel(
         such as the Paris Agreement created to address climate change by focusing on greenhouse gas emissions."),
       h3("Why Does it Matter"),
       p("There are millions of people and organisms that are significantly impacted by these large rates of 
-        deforestation. National Geographic says around eighty percent of Earth’s land animals and plants live 
+        deforestation. National Geographic says around eighty percent of Earth's land animals and plants live 
         in forests and around 250 million people living in the area depend on the forest resources for survival. 
         Deforestation not only affects millions of organisms and people, but it also directly correlates to many other 
         issues in the world such as climate change.  Removing trees adds excess carbon dioxide to the environment and 
         inhibits the ability for ecosystems to absorb existing carbon dioxide. Our planet thrives because of ecological 
         factors such as biodiversity, and since such a large scale of wildlife lives within forest biomes, we need to make 
         sure that their lives are being considered. We cannot continue to allow money and other economic factors cloud the fact 
-        that the world’s forests are a necessary part of our planet’s wellbeing, and they need protection"),
+        that the world's forests are a necessary part of our planet's wellbeing, and they need protection"),
       tags$a(href="https://github.com/JunS1/MCG/wiki/Technical-Report", "Here is our technical report")
     )
   )
@@ -172,7 +172,8 @@ how_to_help <- tabPanel(
       p("3. Buy recycled products and then recycle them again."),
       p("4. Buy certified wood products."), 
       p("5. Read the labels and look for the FSC (Forest Stewardship Council) mark."),
-      p("6. Support the products of companies that are committed to reducing deforestation. It's all about business. If you don't buy, they will be encouraged to improve their practices."),
+      p("6. Support the products of companies that are committed to reducing deforestation. It's all about business.
+        If you don't buy, they will be encouraged to improve their practices."),
       p("7. Raise awareness in your circle and in your community."),
       p("8. Buy only what you will use."), 
       p("9.Don't use Palm Oil or products with Palm Oil.")
@@ -196,8 +197,8 @@ how_to_help <- tabPanel(
         deforestation is actually inexpensive for the United States. Analysis shows that deforestation rates can be 
         reduced by around 50 percent with $20 billion per year. The U.S. only needs to contribute donate $5 billion 
         of this amount, a minor percent of its annual budget. "),
-      p("Preserving tropical forests helps protect the millions of plant and animal species—many of which have 
-        been invaluable to human medicine—that are indigenous to tropical forests and in danger of extinction. 
+      p("Preserving tropical forests helps protect the millions of plant and animal species many of which have 
+        been invaluable to human medicine that are indigenous to tropical forests and in danger of extinction. 
         Keeping forests intact also helps prevent floods and drought by regulating regional rainfall. And because 
         many indigenous and forest peoples rely on tropical forests for their livelihoods, investments in reducing 
         deforestation provide them with the resources they need for sustainable development without deforestation.")
