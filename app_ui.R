@@ -13,15 +13,39 @@ background <- tabPanel(
   sidebarLayout(
     sidebarPanel(
       h3("Define Deforestation"),
-      p("insert definition")
-      
+      p("National Geographic defines it deforestation as the “human-driven and natural loss of trees”. 
+        This act ends up affect many other aspects of life from organisms to ecosystems to weather patterns. 
+        Data shows that forest areas make up around thirty percent of Earth’s land mass  but are disappearing 
+        at an exponential rate. ")
     ),
     mainPanel(
       h3("Problem Situation"),
-      p("Explanation of problem situation (stakeholders, setting, policy)"),
-      p("insert picture here"),
+      img(src = "0_D71q806-VzrFAEzs.jpeg", height = "50%", width = "50%", align = "center"),
+      p("The problem our group is focusing on concerns deforestation throughout the world 
+      and the rate at which it has occurred over the past several decades. As deforestation destroys the 
+      lives of organisms and their surrounding ecosystems, it also makes the world more dangerous for humans. 
+      With forests and rainforests being logged/removed at alarming rates, it’s important for humans to 
+      understand the ecological and societal repercussions of their actions."),
+      tags$b("Stakeholders"),
+      p("Organisms that are native to the forests (plants and animals), indigenous people that live nearby, 
+        loggers, miners, farmers/cattle ranchers, and the government"),
+      tags$b("Setting"),
+      p("Forests across 189 different countries."),
+      tags$b("Policy and Ethics"),
+      p("Deforestation is leading to other environmental issues such as climate change by increasing the amount of
+        carbon dioxide in the atmosphere. Also, as more animals are forced out of their habitats, it is creating a 
+        larger risk for species extinction. There have been policies issued by the UN to address this issue, 
+        such as the Paris Agreement created to address climate change by focusing on greenhouse gas emissions."),
       h3("Why Does it Matter"),
-      p("Explanation"),
+      p("There are millions of people and organisms that are significantly impacted by these large rates of 
+        deforestation. National Geographic says around eighty percent of Earth’s land animals and plants live 
+        in forests and around 250 million people living in the area depend on the forest resources for survival. 
+        Deforestation not only affects millions of organisms and people, but it also directly correlates to many other 
+        issues in the world such as climate change.  Removing trees adds excess carbon dioxide to the environment and 
+        inhibits the ability for ecosystems to absorb existing carbon dioxide. Our planet thrives because of ecological 
+        factors such as biodiversity, and since such a large scale of wildlife lives within forest biomes, we need to make 
+        sure that their lives are being considered. We cannot continue to allow money and other economic factors cloud the fact 
+        that the world’s forests are a necessary part of our planet’s wellbeing, and they need protection"),
       tags$a(href="https://github.com/JunS1/MCG/wiki/Technical-Report", "Here is our technical report")
     )
   )
@@ -136,11 +160,6 @@ how_to_help <- tabPanel(
   # This content uses a sidebar layout
   sidebarLayout(
     sidebarPanel(
-      h3("Why Should You Help?"),
-      p("Reducing it is cost effective, it is inexpensive, 
-        prepare for future, addresses other problems")
-    ),
-    mainPanel(
       h3("Make an Impact"),
       p("1. Plant a Tree where you can."),
       p("2. Go paperless at home and in the office."),
@@ -151,6 +170,31 @@ how_to_help <- tabPanel(
       p("7. Raise awareness in your circle and in your community."),
       p("8. Buy only what you will use."), 
       p("9.Don't use Palm Oil or products with Palm Oil.")
+    ),
+    mainPanel(
+      h3("Why Should You Help?"),
+      img(src = "helppic.jpg"),
+      p("Forest protection initiatives are crucial for everyone on the planet. 
+      Global warming is a global issue and deforestation directly correlates with 
+      changes in global warming as deforestation affects the absorption of carbon dioxide. 
+      Tropical forest are necessary for stabilizing our climate as the forests provide oxygen for us to 
+      breathe but also maintain healthy levels of carbon dioxide to keep the planet a comfortable temperature. 
+      Economic analyses also shows that deforestation is cost effective compared to reducing emissions from other 
+      industrial sources."),
+      p("Consumers play a very crucial role in reducing deforestation. By taking active steps to use 
+        more recycled material and reduce waste we can encourage the demand of these goods that will protect 
+        the forests and together create a larger impact. Many solutions to deforestation exist today worldwide, 
+        we simply have to spread more awareness and increase the use of these products. For example, Brazil has 
+        reduced its deforestation-related emissions by sixty percent, and Indonesia has promised to reduce emissions 
+        contributing to deforestation by around 25 percent in the upcoming years. Research has also shown that preventing 
+        deforestation is actually inexpensive for the United States. Analysis shows that deforestation rates can be 
+        reduced by around 50 percent with $20 billion per year. The U.S. only needs to contribute donate $5 billion 
+        of this amount, a minor percent of its annual budget. "),
+      p("Preserving tropical forests helps protect the millions of plant and animal species—many of which have 
+        been invaluable to human medicine—that are indigenous to tropical forests and in danger of extinction. 
+        Keeping forests intact also helps prevent floods and drought by regulating regional rainfall. And because 
+        many indigenous and forest peoples rely on tropical forests for their livelihoods, investments in reducing 
+        deforestation provide them with the resources they need for sustainable development without deforestation.")
     )
   )
 )
