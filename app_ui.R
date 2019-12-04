@@ -13,14 +13,17 @@ background <- tabPanel(
   sidebarLayout(
     sidebarPanel(
       h3("Define Deforestation"),
-      p("National Geographic defines it deforestation as the “human-driven and natural loss of trees”. 
-        This act ends up affect many other aspects of life from organisms to ecosystems to weather patterns. 
+      p("The National Geographic defines deforestation as the “human-driven and natural loss of trees"),
+      p("This act ends up affect many other aspects of life from organisms to ecosystems to weather patterns. 
         Data shows that forest areas make up around thirty percent of Earth’s land mass  but are disappearing 
-        at an exponential rate. ")
+        at an exponential rate."),
+      img(src = "define.jpg", height = "100%", width = "100%", align = "center"),
+      p("")
     ),
     mainPanel(
+      img(src = "forest.jpeg", height = "100%", width = "100%", align = "center"),
       h3("Problem Situation"),
-      img(src = "background.jpeg", height = "50%", width = "50%", align = "center"),
+      p(" "),
       p("The problem our group is focusing on concerns deforestation throughout the world 
       and the rate at which it has occurred over the past several decades. As deforestation destroys the 
       lives of organisms and their surrounding ecosystems, it also makes the world more dangerous for humans. 
@@ -161,6 +164,8 @@ how_to_help <- tabPanel(
   sidebarLayout(
     sidebarPanel(
       h3("Make an Impact"),
+      img(src = "stop-deforestation.jpg", width = "90%", height = "90%", align = "center"),
+      p(""),
       p("1. Plant a Tree where you can."),
       p("2. Go paperless at home and in the office."),
       p("3. Buy recycled products and then recycle them again."),
@@ -172,8 +177,8 @@ how_to_help <- tabPanel(
       p("9.Don't use Palm Oil or products with Palm Oil.")
     ),
     mainPanel(
+      img(src = "help.jpg", width = "90%", height = "90%", align = "center"),
       h3("Why Should You Help?"),
-      img(src = "help.jpg"),
       p("Forest protection initiatives are crucial for everyone on the planet. 
       Global warming is a global issue and deforestation directly correlates with 
       changes in global warming as deforestation affects the absorption of carbon dioxide. 
@@ -222,7 +227,7 @@ about_page <- tabPanel(
       p("Class: Sophomore"),
       p("Major: Informatics"),
       p("Hobbies: Dancing, cooking, hiking"),
-      img(src = "drishti.JPG", height = "300px", width = "350px"),
+      img(src = "drishti.JPG", height = "300", width = "350"),
       h4("Drishti Vidyarthi"),
       p("Class: Sophomore"),
       p("Major: Informatics"),
