@@ -36,19 +36,12 @@ forest_coverage_visualization <- tabPanel(
   sidebarLayout(
     sidebarPanel(
       tags$h4("Map Options"),
-      sliderInput(
+      selectInput(
         inputId = "year",
         label = "Select year",
-        min = 1990,
-        max = 2015,
-        value = 1990
-      ),
-      tags$h4("Trends"),
-      tags$p("Discussion of trends in forest coverage over time and possible
-             causes of these trends."),
-      tags$h4("Current Measures"),
-      tags$p("Discussion of the effectiveness of current measures to decrease
-             rates of deforestation.")
+        choices = seq(from = 1990, to = 2015, by = 1),
+        selected = 1990
+      )
     ),
     mainPanel(
       h3("World Map of Forest Coverage"),
@@ -57,9 +50,16 @@ forest_coverage_visualization <- tabPanel(
       tabsetPanel (
         tags$p("Percentage of forest coverage depending on the selected year.")
       ),
-      tags$h2("Findings"),
-      tags$p("Enter findings here, possibly points out trends to look for/pay special
-             attention to")
+      tags$h2("Trends and Analysis"),
+      tags$p("From this map, the general decrease in forest coverage percentage
+             in the majority of countries is made clear. However, while most
+             countries have decreasing percentages, a few appear to be making
+             marginal progress in decreasing their rates of deforestation.
+             Another interesting thing to examine from this map are the trends in
+             developed vs less developed countries. For example, forest coverage in
+             Cambodia makes a marked decrease between 1990 and 2015, while coverage
+             in the USA increases. This could be due to implemented programs and
+             efforts to increase awareness and solve this issue.")
     )
   )
 )
