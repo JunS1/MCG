@@ -160,17 +160,15 @@ about_page <- tabPanel(
   "About", # Label within the NavBar
   titlePanel("About the Project/About Us"), # Title with the tab
   # 'About Us' Sidebar for teammates
-  sidebarLayout(
-    sidebarPanel(
-      h3("About the Team:"),
-      p("Post pictures and brief description of each team member")
-    ),
     # About the Project 
     mainPanel(
-      h3("About the Project"),
-      p("Information about the project goes here.")
+      h3("About the Team:"),
+      img(src = "jun_song.JPG", height = "300px", width = "350px"),
+      h4("Jun Song:"),
+      p("Class: Sophomore"),
+      p("Major: Computer Science"),
+      p("Hobbies: Guitar, tennis, soccer")
     )
-  )
 )
 
 # ui component
