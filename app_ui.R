@@ -167,7 +167,13 @@ about_page <- tabPanel(
       h4("Jun Song:"),
       p("Class: Sophomore"),
       p("Major: Computer Science"),
-      p("Hobbies: Guitar, tennis, soccer")
+      p("Hobbies: Guitar, tennis, soccer"),
+      img(src = "zack_photo.JPG", height = "300px", width = "350px"),
+      h4("Zack Shanshory:"),
+      p("Class: Junior"),
+      p("Major: ESRM"),
+      p("Hobbies: Basketball, videogames, camping")
+      
     )
 )
 
