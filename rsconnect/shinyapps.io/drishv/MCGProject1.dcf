@@ -5,8 +5,8 @@ account: drishv
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 1504543
-bundleId: 2642387
+bundleId: 2642630
 url: https://drishv.shinyapps.io/MCGProject1/
-when: 1575511094.67899
+when: 1575518931.61666
 asMultiple: FALSE
 asStatic: FALSE
